@@ -1,4 +1,4 @@
-var map, featureList, boroughSearch = [], theaterSearch = [], museumSearch = [];
+var map, featureList, boroughSearch = [], theaterSearch = [], museumSearch = [], mosqueSearch = [];
 
 $(window).resize(function() {
   sizeLayerControl();
@@ -107,6 +107,15 @@ function syncSidebar() {
       }
     }
   });
+  /* Loop through mosques layer and add only features which are in the map bounds */
+  mosques.eachLayer(function (layer) {
+    if (map.hasLayer(mosqueLayer)) {
+      if (map.getBounds().contains(layer.getLatLng())) {
+        $("#feature-list tbody").append('<tr class="feature-row" id="' + L.stamp(layer) + '" lat="' + layer.getLatLng().lat + '" lng="' + layer.getLatLng().lng + '"><td style="vertical-align: middle;"><img width="16" height="18" src="assets/img/mosques.png"></td><td class="feature-name">' + layer.feature.properties.NAME + '</td><td style="vertical-align: middle;"><i class="fa fa-chevron-right pull-right"></i></td></tr>');
+      }
+    }
+  });
+  
   /* Update list.js featureList */
   featureList = new List("features", {
     valueNames: ["feature-name"]
@@ -366,6 +375,10 @@ map.on("overlayadd", function(e) {
     markerClusters.addLayer(museums);
     syncSidebar();
   }
+  if (e.layer === mosqueLayer) {
+    markerClusters.addLayer(mosques);
+    syncSidebar();
+  }
 });
 
 map.on("overlayremove", function(e) {
@@ -375,6 +388,10 @@ map.on("overlayremove", function(e) {
   }
   if (e.layer === museumLayer) {
     markerClusters.removeLayer(museums);
+    syncSidebar();
+  }
+  if (e.layer === mosqueLayer) {
+    markerClusters.removeLayer(mosques);
     syncSidebar();
   }
 });
@@ -461,7 +478,8 @@ var baseLayers = {
 var groupedOverlays = {
   "Points of Interest": {
     "<img src='assets/img/theater.png' width='24' height='28'>&nbsp;Theaters": theaterLayer,
-    "<img src='assets/img/museum.png' width='24' height='28'>&nbsp;Museums": museumLayer
+    "<img src='assets/img/museum.png' width='24' height='28'>&nbsp;Museums": museumLayer,
+    "<img src='assets/img/mosques.png' width='24' height='28'>&nbsp;Mosques": mosqueLayer,
   },
   "Reference": {
     "Boroughs": boroughs,
@@ -528,6 +546,16 @@ $(document).one("ajaxStop", function () {
     limit: 10
   });
 
+    var mosquesBH = new Bloodhound({
+    name: "Mosques",
+    datumTokenizer: function (d) {
+      return Bloodhound.tokenizers.whitespace(d.name);
+    },
+    queryTokenizer: Bloodhound.tokenizers.whitespace,
+    local: mosqueSearch,
+    limit: 10
+  });
+
   var geonamesBH = new Bloodhound({
     name: "GeoNames",
     datumTokenizer: function (d) {
@@ -561,6 +589,7 @@ $(document).one("ajaxStop", function () {
   boroughsBH.initialize();
   theatersBH.initialize();
   museumsBH.initialize();
+  mosquesBH.initialize();
   geonamesBH.initialize();
 
   /* instantiate the typeahead UI */
@@ -592,6 +621,14 @@ $(document).one("ajaxStop", function () {
       suggestion: Handlebars.compile(["{{name}}<br>&nbsp;<small>{{address}}</small>"].join(""))
     }
   }, {
+    name: "Mosques",
+    displayKey: "name",
+    source: mosquesBH.ttAdapter(),
+    templates: {
+      header: "<h4 class='typeahead-header'><img src='assets/img/mosques.png' width='24' height='28'>&nbsp;Mosques</h4>",
+      suggestion: Handlebars.compile(["{{name}}<br>&nbsp;<small>{{address}}</small>"].join(""))
+    }
+  }, {
     name: "GeoNames",
     displayKey: "name",
     source: geonamesBH.ttAdapter(),
@@ -614,6 +651,15 @@ $(document).one("ajaxStop", function () {
     if (datum.source === "Museums") {
       if (!map.hasLayer(museumLayer)) {
         map.addLayer(museumLayer);
+      }
+      map.setView([datum.lat, datum.lng], 17);
+      if (map._layers[datum.id]) {
+        map._layers[datum.id].fire("click");
+      }
+    }
+    if (datum.source === "Mosques") {
+      if (!map.hasLayer(mosqueLayer)) {
+        map.addLayer(mosqueLayer);
       }
       map.setView([datum.lat, datum.lng], 17);
       if (map._layers[datum.id]) {
