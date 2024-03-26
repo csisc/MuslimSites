@@ -344,7 +344,7 @@ var mosques = L.geoJson(null, {
       $("#feature-list tbody").append('<tr class="feature-row" id="' + L.stamp(layer) + '" lat="' + layer.getLatLng().lat + '" lng="' + layer.getLatLng().lng + '"><td style="vertical-align: middle;"><img width="16" height="18" src="assets/img/mosques.png"></td><td class="feature-name">' + layer.feature.properties.NAME + '</td><td style="vertical-align: middle;"><i class="fa fa-chevron-right pull-right"></i></td></tr>');
       mosqueSearch.push({
         name: layer.feature.properties.NAME,
-        address: layer.feature.properties.ADRESS1,
+        /*address: layer.feature.properties.ADRESS1,*/
         source: "Mosques",
         id: L.stamp(layer),
         lat: layer.feature.geometry.coordinates[1],
