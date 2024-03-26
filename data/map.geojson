@@ -6197,5 +6197,4 @@
 { "type": "Feature", "id": 6193, "properties": { "NAME": "", "COUNTRY": "Q851", "AUDIO": "", "VIDEO": "", "IMAGE": "", "GEOSHAPE": "", "QID": Q122599153, "WIKIPEDIA": "True" }, "geometry": { "type": "Point", "coordinates": [ 25.127634003, 45.482872975 ] } },
 { "type": "Feature", "id": 6194, "properties": { "NAME": "", "COUNTRY": "Q851", "AUDIO": "", "VIDEO": "", "IMAGE": "", "GEOSHAPE": "", "QID": Q122599728, "WIKIPEDIA": "True" }, "geometry": { "type": "Point", "coordinates": [ 25.618931465, 45.560563439 ] } },
 { "type": "Feature", "id": 6195, "properties": { "NAME": "", "COUNTRY": "Q851", "AUDIO": "", "VIDEO": "", "IMAGE": "", "GEOSHAPE": "", "QID": Q122600633, "WIKIPEDIA": "True" }, "geometry": { "type": "Point", "coordinates": [ 24.736787643, 46.57537605 ] } },
-"]
 }
