@@ -121,6 +121,18 @@ input[type="radio"], input[type="checkbox"] {
   line-height: 20px;
   padding: 3px 10px;
 }
+.button {
+        background-color: #1c87c9;
+        border: none;
+        color: white;
+        padding: 20px 34px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 20px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
 .tt-suggestion.tt-cursor {
   background-color: #0097CF;
   color: #FFFFFF;
