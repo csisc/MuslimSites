@@ -1,7 +1,8 @@
 {
 "type": "FeatureCollection",
 
-"features": [{ "type": "Feature", "id": 0, "properties": { "NAME": "Sultan Ahmed Mosque", "COUNTRY": "Q43", "AUDIO": "", "VIDEO": "http://commons.wikimedia.org/wiki/Special:FilePath/Blue%20Mosque.ogv", "IMAGE": "http://commons.wikimedia.org/wiki/Special:FilePath/Exterior%20of%20Sultan%20Ahmed%20I%20Mosque%20in%20Istanbul%2C%20Turkey%20002.jpg", "GEOSHAPE": "", "QID": Q80541, "WIKIPEDIA": "True" }, "geometry": { "type": "Point", "coordinates": [ 41.0053851, 28.9768247 ] } },
+"features": [
+{ "type": "Feature", "id": 0, "properties": { "NAME": "Sultan Ahmed Mosque", "COUNTRY": "Q43", "AUDIO": "", "VIDEO": "http://commons.wikimedia.org/wiki/Special:FilePath/Blue%20Mosque.ogv", "IMAGE": "http://commons.wikimedia.org/wiki/Special:FilePath/Exterior%20of%20Sultan%20Ahmed%20I%20Mosque%20in%20Istanbul%2C%20Turkey%20002.jpg", "GEOSHAPE": "", "QID": Q80541, "WIKIPEDIA": "True" }, "geometry": { "type": "Point", "coordinates": [ 41.0053851, 28.9768247 ] } },
 { "type": "Feature", "id": 1, "properties": { "NAME": "Jāmiʻ al-ʻĀbidīn", "COUNTRY": "Q948", "AUDIO": "", "VIDEO": "", "IMAGE": "http://commons.wikimedia.org/wiki/Special:FilePath/Carthage%20mosquee1.jpg", "GEOSHAPE": "", "QID": Q94809, "WIKIPEDIA": "True" }, "geometry": { "type": "Point", "coordinates": [ 36.8594, 10.329 ] } },
 { "type": "Feature", "id": 2, "properties": { "NAME": "Al-Kadhimiya Mosque", "COUNTRY": "Q796", "AUDIO": "", "VIDEO": "", "IMAGE": "http://commons.wikimedia.org/wiki/Special:FilePath/%D8%A7%D9%84%D8%B9%D8%AA%D8%A8%D8%A9%20%D8%A7%D9%84%D9%83%D8%A7%D8%B8%D9%85%D9%8A%D8%A9%20%284%29.jpg", "GEOSHAPE": "", "QID": Q154116, "WIKIPEDIA": "True" }, "geometry": { "type": "Point", "coordinates": [ 33.37997, 44.33796 ] } },
 { "type": "Feature", "id": 3, "properties": { "NAME": "Dome of the Rock", "COUNTRY": "Q219060", "AUDIO": "", "VIDEO": "", "IMAGE": "http://commons.wikimedia.org/wiki/Special:FilePath/16-04-04-Felsendom-Tempelberg-Jerusalem-RalfR-WAT%206385.jpg", "GEOSHAPE": "", "QID": Q172077, "WIKIPEDIA": "True" }, "geometry": { "type": "Point", "coordinates": [ 31.778055555, 35.235277777 ] } },
@@ -6197,4 +6198,5 @@
 { "type": "Feature", "id": 6193, "properties": { "NAME": "", "COUNTRY": "Q851", "AUDIO": "", "VIDEO": "", "IMAGE": "", "GEOSHAPE": "", "QID": Q122599153, "WIKIPEDIA": "True" }, "geometry": { "type": "Point", "coordinates": [ 25.127634003, 45.482872975 ] } },
 { "type": "Feature", "id": 6194, "properties": { "NAME": "", "COUNTRY": "Q851", "AUDIO": "", "VIDEO": "", "IMAGE": "", "GEOSHAPE": "", "QID": Q122599728, "WIKIPEDIA": "True" }, "geometry": { "type": "Point", "coordinates": [ 25.618931465, 45.560563439 ] } },
 { "type": "Feature", "id": 6195, "properties": { "NAME": "", "COUNTRY": "Q851", "AUDIO": "", "VIDEO": "", "IMAGE": "", "GEOSHAPE": "", "QID": Q122600633, "WIKIPEDIA": "True" }, "geometry": { "type": "Point", "coordinates": [ 24.736787643, 46.57537605 ] } },
+]
 }
