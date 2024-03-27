@@ -334,7 +334,15 @@ var mosques = L.geoJson(null, {
     if (feature.properties) {
       var wikipedia_l = "<b>Create a Wikipedia article!</b>"
       if (feature.properties.WIKIPEDIA == "True"){ wikipedia_l = '<a href="https://hub.toolforge.org/' + feature.properties.QID + '" class="button" target="_blank">Read</a> <a href="https://sawtpedia.toolforge.org/link?id=' + feature.properties.QID + '" class="button" target="_blank">Listen</a> ' }
-      var content = "<table class='table table-striped table-bordered table-condensed'>" + "<tr><th>Name</th><td>" + feature.properties.NAME + "</td></tr>" + "<tr><th>Wikipedia</th><td>" + wikipedia_l + "</td></tr>" + '<tr><th>Media</th><td><img src="' + feature.properties.IMAGE + '" height="150" /><br />'+ '<a href="' + feature.properties.AUDIO + '" class="button" target="_blank">Audio</a> <a href="' + feature.properties.VIDEO + '" class="button" target="_blank">Video</a> </td></tr>' + "<tr><th>Borders</th><td><a class='url-break' href='" + feature.properties.GEOSHAPE + "' target='_blank'>" + feature.properties.GEOSHAPE + "</a></td></tr>" + "<table>";
+      var img_l = '<b>Upload your own image to <a href="https://commons.wikimedia.org/wiki/Special:UploadWizard" target="_blank">Wikimedia Commons</a>!</b><br />'
+      if (feature.properties.IMAGE != ""){ img_l = '<img src="' + feature.properties.IMAGE + '" height="150" /><br />'}
+      var vid_l = '<b>Upload your own video to <a href="https://commons.wikimedia.org/wiki/Special:UploadWizard" target="_blank">Wikimedia Commons</a>!</b>'
+      if (feature.properties.VIDEO != ""){ vid_l = '<a href="' + feature.properties.VIDEO + '" class="button" target="_blank">Video</a>'}
+      var aud_l = '<b>Upload your own audio to <a href="https://commons.wikimedia.org/wiki/Special:UploadWizard" target="_blank">Wikimedia Commons</a>!</b><br />'
+      if (feature.properties.AUDIO != ""){ aud_l = '<a href="' + feature.properties.AUDIO + '" class="button" target="_blank">Audio</a> '}
+      var geo_l = '<b>Create your own GeoShape in <a href="https://www.mediawiki.org/wiki/Help:Map_Data" target="_blank">Wikimedia Commons</a>!</b>'
+      if (feature.properties.GEOSHAPE != ""){ geo_l = "<a class='url-break' href='" + feature.properties.GEOSHAPE + "' target='_blank'>" + feature.properties.GEOSHAPE + "</a></td></tr>" }
+      var content = "<table class='table table-striped table-bordered table-condensed'>" + "<tr><th>Name</th><td>" + feature.properties.NAME + "</td></tr>" + "<tr><th>Wikipedia</th><td>" + wikipedia_l + "</td></tr><tr><th>Media</th><td>"+ img_l + aud_l + vid_l + '</td></tr>' + "<tr><th>Borders</th><td>" + geo_l + "<table>";
       layer.on({
         click: function (e) {
           $("#feature-title").html(feature.properties.NAME);
