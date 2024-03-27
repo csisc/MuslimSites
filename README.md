@@ -1,7 +1,9 @@
 MuslimSites
 ========
+An open-source web mapping application for Islamic monuments.
 
-It has been developed based on [BootLeaf](http://bmcbride.github.io/bootleaf/) - a simple, responsive template for building web mapping applications with [Bootstrap](http://getbootstrap.com/), [Leaflet](http://leafletjs.com/), and [typeahead.js](http://twitter.github.io/typeahead.js/).
+## Principles:
+The Project has been developed based on [BootLeaf](http://bmcbride.github.io/bootleaf/) - a simple, responsive template for building web mapping applications with [Bootstrap](http://getbootstrap.com/), [Leaflet](http://leafletjs.com/), and [typeahead.js](http://twitter.github.io/typeahead.js/). The Project draws its data from an external GeoJSON file.
 
 ### Features:
 * Fullscreen mobile-friendly map template with responsive Navbar and modal placeholders
