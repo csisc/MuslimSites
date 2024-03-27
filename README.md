@@ -1,10 +1,7 @@
-BootLeaf
+MuslimSites
 ========
 
-A simple, responsive template for building web mapping applications with [Bootstrap](http://getbootstrap.com/), [Leaflet](http://leafletjs.com/), and [typeahead.js](http://twitter.github.io/typeahead.js/).
-
-### Demo:
-http://bmcbride.github.io/bootleaf/
+It has been developed based on [BootLeaf](http://bmcbride.github.io/bootleaf/) - a simple, responsive template for building web mapping applications with [Bootstrap](http://getbootstrap.com/), [Leaflet](http://leafletjs.com/), and [typeahead.js](http://twitter.github.io/typeahead.js/).
 
 ### Features:
 * Fullscreen mobile-friendly map template with responsive Navbar and modal placeholders
