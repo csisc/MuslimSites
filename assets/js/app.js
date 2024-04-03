@@ -564,6 +564,3 @@ if (!L.Browser.touch) {
   L.DomEvent.disableClickPropagation(container);
   
 }
-
-//Check mosques by default
-document.querySelector("input.leaflet-control-layers-selector[type='checkbox']").click()
