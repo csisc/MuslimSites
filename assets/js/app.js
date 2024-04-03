@@ -269,7 +269,7 @@ $.getJSON("data/map.geojson", function (data) {
 map = L.map("map", {
   zoom: 1,
   center: [0, 0],
-  layers: [cartoLight, mosques, markerClusters, highlight],
+  layers: [cartoLight, markerClusters, highlight],
   zoomControl: false,
   attributionControl: false
 });
@@ -562,4 +562,8 @@ if (!L.Browser.touch) {
   .disableScrollPropagation(container);
 } else {
   L.DomEvent.disableClickPropagation(container);
+  
 }
+
+//Check mosques by default
+document.querySelector("input.leaflet-control-layers-selector[type='checkbox']").checked = true
