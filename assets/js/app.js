@@ -566,4 +566,4 @@ if (!L.Browser.touch) {
 }
 
 //Check mosques by default
-document.querySelector("input.leaflet-control-layers-selector[type='checkbox']").checked = true
+document.querySelector("input.leaflet-control-layers-selector[type='checkbox']").click()
